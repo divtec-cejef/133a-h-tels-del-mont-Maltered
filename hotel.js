@@ -1,7 +1,7 @@
 ﻿/**
-* @author      Steve Fallet <steve.fallet@divtec.ch>
+* @author      Sohan Anampalli
 * @version     1.0
-* @since       2023-10-09
+* @since       2023-10-10
 *
 * http://usejsdoc.org/
 */
@@ -12,8 +12,21 @@
  * Retourne le nom de l'hotel sélectionné par le visiteur
  * @returns {String} Nom de l'hotêl ou "0" si pas de sélection
  */
-function getHotel() {
 
+
+const form = document.getElementById("form");
+const resetButton = document.getElementById('reset-button')
+const sendButton = document.getElementById('send-button')
+
+
+document.getElementById('send-button').addEventListener('click', () => {
+    alert(getHotel())
+    getHotel()
+})
+
+
+function getHotel() {
+    return form.querySelector('[name="opt_type_chambre"]:checked').value
 }
 
 /**
